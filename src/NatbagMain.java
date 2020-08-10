@@ -1,6 +1,5 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
-
 import flightControl.Control;
 import flightControl.Flight;
 import flightControl.Program;
