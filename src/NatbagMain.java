@@ -28,9 +28,9 @@ public class NatbagMain {
 		int startDay = args.length > 6 && !args[6].equals("") ? Integer.valueOf(args[6]) : today.getDayOfMonth();
 		int startMonth = args.length > 7 && !args[7].equals("") ? Integer.valueOf(args[7]) : today.getMonthValue();
 		int startYear = args.length > 8 && !args[8].equals("") ? Integer.valueOf(args[8]) : today.getYear();
-		int endDay = args.length > 9 && !args[9].equals("") ? Integer.valueOf(args[9]) : today.getDayOfMonth();
-		int endMonth = args.length > 10 && !args[10].equals("") ? Integer.valueOf(args[10]) : today.getMonthValue();
-		int endYear = args.length > 11 && !args[11].equals("") ? Integer.valueOf(args[11]) : today.getYear();
+		int endDay = args.length > 9 && !args[9].equals("") ? Integer.valueOf(args[9]) : 0;
+		int endMonth = args.length > 10 && !args[10].equals("") ? Integer.valueOf(args[10]) : 0;
+		int endYear = args.length > 11 && !args[11].equals("") ? Integer.valueOf(args[11]) : 0;
 		boolean sunday = args.length > 12 && !args[12].equals("") ? Boolean.valueOf(args[12]) : true;
 		boolean monday = args.length > 13 && !args[13].equals("") ? Boolean.valueOf(args[13]) : true;
 		boolean tuesday = args.length > 14 && !args[14].equals("") ? Boolean.valueOf(args[14]) : true;
@@ -40,7 +40,8 @@ public class NatbagMain {
 		boolean saturday = args.length > 18 && !args[18].equals("") ? Boolean.valueOf(args[18]) : true;
 		boolean[] days = { sunday, monday, tuesday, wednesday, thursday, friday, saturday };
 		LocalDate startDate = LocalDate.of(startYear, startMonth, startDay);
-		LocalDate endDate = LocalDate.of(endYear, endMonth, endDay);
+		LocalDate endDate = (endYear != 0 || endMonth != 0 || endDay != 0) ? LocalDate.of(endYear, endMonth, endDay)
+				: null;
 		System.out.println(printFlights(
 				control.search(isDepartures, airline, country, city, airport, days, startDate, endDate), nextLine));
 	}

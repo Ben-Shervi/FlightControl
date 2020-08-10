@@ -62,8 +62,10 @@ public class Control {
 			boolean sameDates1 = endDate == null || f.getDate().isBefore(endDate) || f.getDate().isEqual(endDate);
 			boolean sameDates2 = startDate == null || f.getDate().isAfter(startDate) || f.getDate().isEqual(startDate);
 			if (sameType && sameAirline && sameCountry && sameCity && sameAirport && sameDays && sameDates1
-					&& sameDates2)
+					&& sameDates2) {
 				results.add(f);
+
+			}
 		}
 		return results;
 	}
