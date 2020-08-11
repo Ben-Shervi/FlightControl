@@ -7,8 +7,8 @@ import java.time.LocalTime;
 
 import org.junit.jupiter.api.Test;
 
-import flightsList.Control;
-import flightsList.Flight;
+import flightControl.Control;
+import flightControl.Flight;
 
 class Test01 {
 
