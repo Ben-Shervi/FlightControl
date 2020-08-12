@@ -24,7 +24,7 @@ class Test01 {
 		;
 	}
 
-	private Control testControl() {
+	public static Control testControl() {
 		Control c = new Control();
 		LocalDate d1 = LocalDate.of(2020, 05, 20);
 		LocalTime t1 = LocalTime.of(10, 10);

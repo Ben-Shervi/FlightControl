@@ -9,6 +9,9 @@ import java.util.Scanner;
 
 public class Control {
 	private ArrayList<Flight> flights = new ArrayList<Flight>();
+	public ArrayList<Flight> getFlights() {
+		return flights;
+	}
 
 	public boolean addFlight(Flight flight) {
 		if (!flights.contains(flight)) {
