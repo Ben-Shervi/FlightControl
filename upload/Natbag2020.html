@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+         <style>
+         body {
+             background-image: url('http://127.0.0.1:5000/image');
+             background-repeat: no-repeat;
+             background-attachment: fixed;
+             background-size: cover;
+         }
+         </style>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Natbag2020</title>
+    </head>
+    <body>
+        <h2>Flights Search</h2>
+        <form action="/search">
+            <label for="airline">Airline:</label>
+            &emsp;
+            <input type="text" id="airline" name="airline" style="width: 398px;">
+            &ensp;
+            <input type="radio" id="arrivals" name="flighttype">
+            <label for="arrivals">Arrivals</label>
+            &emsp;&ensp;
+            <input type="radio" id="departures" name="flightType" checked>
+            <label for="departures">Departures</label>
+            <br>
+            <br>
+            <label for="country">Country:</label>
+            &nbsp;
+            <input type="text" id="country" name="country" style="width: 150px;">
+            &emsp;
+            <label for="city">City:</label>
+            &nbsp;
+            <input type="text" id="city" name="city" style="width: 150px;">
+            &emsp;
+            <label for="airport">Airport:</label>
+            &nbsp;
+            <input type="text" id="airport" name="airport" style="width: 150px;">
+            <br>
+            <br>
+            <label for="startdate">From:</label>
+            &emsp;&ensp;
+            <input type="date" id="startdate" name="startdate" style="width: 150px; height: 30px;">
+            &emsp;&emsp;
+            <label for="enddate">To:</label>
+            &nbsp;
+            <input type="date" id="enddate" name="enddate" style="width: 150px; height: 30px;">
+            <script>
+                n =  new Date();
+                y = n.getFullYear();
+                m = n.getMonth() + 1;
+                if (m<10)
+                    m = "0"+m;
+                d = n.getDate();
+                date = y+"-"+m+"-"+d;
+                document.getElementById('startdate').valueAsDate = n;
+                document.getElementById('startdate').min = date;
+                document.getElementById('enddate').min = date;
+                function search(){
+                    return ('http://127.0.0.1:5000/search?outformat=html&flighttype='+document.getElementById("arrivals").checked+'&country='+document.getElementById("country").value+'&city='+document.getElementById("city").value+'&airport='+document.getElementById("airport").value+'&airline='+document.getElementById("airline").value+'&startdate='+document.getElementById("startdate").value+'&enddate='+document.getElementById("enddate").value+'&sunday='+document.getElementById("sunday").checked+'&monday='+document.getElementById("monday").checked+'&tuesday='+document.getElementById("tuesday").checked+'&wednesday='+document.getElementById("wednesday").checked+'&thursday='+document.getElementById("thursday").checked+'&friday='+document.getElementById("friday").checked+'&saturday='+document.getElementById("saturday").checked)
+                }
+            </script>
+            <br>
+            <br>
+            <label>Days:</label>
+            &emsp;&ensp;
+            <input type="checkbox" id="sunday" name="sunday" checked>
+            <label for="sunday">Sun</label>
+            &nbsp;
+            <input type="checkbox" id="monday" name="monday" checked>
+            <label for="monday">Mon</label>
+            &nbsp;
+            <input type="checkbox" id="tuesday" name="tuesday" checked>
+            <label for="tuesday">Tue</label>
+            &nbsp;
+            <input type="checkbox" id="wednesday" name="wednesday" checked>
+            <label for="wednesday">Wen</label>
+            &nbsp;
+            <input type="checkbox" id="thursday" name="thursday" checked>
+            <label for="thursday">Thu</label>
+            &nbsp;
+            <input type="checkbox" id="friday" name="friday" checked>
+            <label for="friday">Fri</label>
+            &nbsp;
+            <input type="checkbox" id="saturday" name="saturday" checked>
+            <label for="saturday">Sat</label>
+            &emsp;
+            <input type="reset" value="Clear" onclick="flights.location.href='http://127.0.0.1:5000/iframe'">
+            <input type="button" onclick="flights.location.href=search()" value="Search">
+            <br>
+            <br>
+            <iframe src="http://127.0.0.1:5000/iframe" name="flights" height="300px" width="100%" title="Flights"></iframe>
+        </form>
+    </body>
+</html>
