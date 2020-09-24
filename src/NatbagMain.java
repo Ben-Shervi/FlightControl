@@ -33,7 +33,7 @@ public class NatbagMain {
 		boolean thursday = args.length > 12 && !args[12].equals("") ? Boolean.valueOf(args[12]) : true;
 		boolean friday = args.length > 13 && !args[13].equals("") ? Boolean.valueOf(args[13]) : true;
 		boolean saturday = args.length > 14 && !args[14].equals("") ? Boolean.valueOf(args[14]) : true;
-		boolean[] days = { sunday, monday, tuesday, wednesday, thursday, friday, saturday };
+		boolean[] days = { monday, tuesday, wednesday, thursday, friday, saturday , sunday};
 		System.out.println(printFlights(
 				control.search(isDepartures, airline, country, city, airport, days, startDate, endDate), nextLine));
 	}

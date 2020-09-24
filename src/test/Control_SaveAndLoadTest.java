@@ -13,7 +13,7 @@ class Control_SaveAndLoadTest {
 
 	@Test
 	void test() throws FileNotFoundException {
-		Control c1 = Test01.testControl();
+		Control c1 = Flight_sortTest.testControl();
 		File f = new File("FileForTests");
 		c1.save(f);
 		Control c2 = new Control();

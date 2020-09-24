@@ -1,13 +1,9 @@
 package test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.time.LocalDate;
 import java.time.LocalTime;
-
-import org.junit.Before;
 import org.junit.jupiter.api.Test;
-
 import flightControl.Control;
 import flightControl.Flight;
 
@@ -15,7 +11,7 @@ class Control_getArrivalsAndGetDeparturesTest {
 
 	
 	public Control setup() {
-		Control c = Test01.testControl() ;
+		Control c = Flight_sortTest.testControl() ;
 		LocalDate d1 = LocalDate.of(2020, 05, 20);
 		LocalTime t3 = LocalTime.of(05,48);
 		LocalTime t4 = LocalTime.of(02, 14);

@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import flightControl.Control;
 import flightControl.Flight;
 
-class Test01 {
+class Flight_sortTest {
 
 	@Test
 	public void sortTest() {
